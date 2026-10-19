@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b12">
+  <meta name="description" content="Song Defender AI — cari dan kenali lagu dari TikTok, YouTube, atau file audio.">
+  <title>Song Defender AI — Music Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Song Defender AI beranda">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13.5V10m4 7V7m4 13V4m4 13V7m4 6v-2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <span>SONG<span class="brand-light">DEFENDER</span><small>AI MUSIC FINDER</small></span>
+    </a>
+    <span class="status-pill"><i></i> Music intelligence</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="spark">✦</span> YOUR NEXT FAVORITE SONG IS ONE SEARCH AWAY</div>
+      <h1>Musik apa ini?<br><span class="gradient-text">Biar AI yang cari.</span></h1>
+      <p class="hero-copy">Temukan lagu dari video, audio, atau petunjuk kecil yang masih kamu ingat.</p>
+    </section>
+
+    <section class="search-card">
+      <div class="tabs" role="tablist" aria-label="Metode pencarian">
+        <button class="tab active" data-tab="url" role="tab" aria-selected="true"><span>↗</span> Link video</button>
+        <button class="tab" data-tab="file" role="tab" aria-selected="false"><span>↑</span> Upload audio</button>
+        <button class="tab" data-tab="ai" role="tab" aria-selected="false"><span>✧</span> Tanya AI</button>
+      </div>
+      <form id="url-form" class="panel active" data-panel="url">
+        <label for="video-url">Tempel link TikTok atau YouTube</label>
+        <div class="input-row"><span class="input-icon">↗</span><input id="video-url" type="url" placeholder="https://www.tiktok.com/... atau youtube.com/..." required><button class="primary-btn" type="submit">Cari lagu <span>→</span></button></div>
+        <p class="hint"><span class="tiny-dot"></span> Audio diproses untuk mengenali lagu, bukan membaca caption video.</p>
+      </form>
+      <form id="file-form" class="panel" data-panel="file">
+        <label for="audio-file">Pilih file musik atau video</label>
+        <label class="dropzone" for="audio-file"><span class="upload-icon">↑</span><strong id="file-title">Pilih MP3, WAV, M4A, atau MP4</strong><span id="file-subtitle">Ketuk untuk memilih file dari perangkat · Maks. 50 MB</span><input id="audio-file" type="file" accept="audio/*,video/mp4,.mp3,.wav,.m4a,.aac,.ogg,.mp4" required></label>
+        <button class="primary-btn full-btn" type="submit">Kenali audio <span>→</span></button>
+      </form>
+      <form id="ai-form" class="panel" data-panel="ai">
+        <label for="ai-query">Apa yang kamu ingat tentang lagunya?</label>
+        <textarea id="ai-query" rows="3" placeholder="Contoh: phonk cepat, bass berat, sering dipakai video anime di TikTok…"></textarea>
+        <div class="input-row ai-row"><span class="input-icon">✧</span><input id="ai-lyrics" type="text" placeholder="Potongan lirik (opsional)"><button class="primary-btn" type="submit">Cari dengan AI <span>→</span></button></div>
+        <p class="hint">AI membantu menyusun petunjuk pencarian. Hasil perlu diverifikasi; ini berbeda dari pengenalan audio langsung.</p>
+      </form>
+    </section>
+
+    <section id="activity" class="activity hidden" aria-live="polite">
+      <div class="loader" id="loader"></div><div><strong id="activity-title">Sedang mencari…</strong><p id="activity-copy">Menganalisis petunjuk audio.</p></div>
+    </section>
+    <section id="result" class="result-card hidden" aria-live="polite"></section>
+    <section id="ai-results" class="ai-results hidden"></section>
+
+    <section class="how-section">
+      <div class="section-kicker">DIBUAT UNTUK PENEMU MUSIK</div><h2>Satu tempat. Banyak cara menemukan lagu.</h2>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-icon purple">♫</div><h3>Audio fingerprint</h3><p>Mencocokkan cuplikan audio dengan layanan pengenal lagu.</p></article>
+        <article class="feature"><div class="feature-icon blue">✧</div><h3>Pencarian berbantuan AI</h3><p>Gunakan lirik, suasana, genre, atau detail yang kamu ingat.</p></article>
+        <article class="feature"><div class="feature-icon green">▶</div><h3>Dengar cuplikan</h3><p>Putar preview jika tersedia dari layanan sumber yang mendukungnya.</p></article>
+      </div>
+    </section>
+    <footer><span>© Song Defender AI</span><span>Made for music discovery <b>✦</b></span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
